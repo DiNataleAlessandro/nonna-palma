@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
           {/* Brand & Mission */}
           <div className="space-y-6 text-center md:text-left">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-4">
               <Link href="/" className="inline-block group shrink-0">
                 <div className="relative w-20 h-20 transition-opacity group-hover:opacity-80">
                   <Image
