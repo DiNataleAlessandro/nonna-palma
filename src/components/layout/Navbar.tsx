@@ -1,10 +1,26 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ShoppingBag, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const [lang, setLang] = useState("IT");
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsLangOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 w-full bg-[#f8f4f1] border-b border-black/10 shadow-[0_1px_4px_0_rgba(0,0,0,0.6)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
@@ -33,10 +49,43 @@ export default function Navbar() {
 
         {/* Controls (Right) */}
         <div className="flex items-center space-x-8">
-          {/* Language Selector (Placeholder) */}
-          <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-[#f8f4f1] shadow-[0_6px_12px_0_rgba(0,0,0,0.1)] cursor-pointer hover:opacity-80 transition-opacity">
-            <div className="w-5 h-5 rounded-full bg-gradient-to-r from-green-600 via-white to-red-600 border border-black/5" />
-            <ChevronDown className="w-4 h-4 text-nonna-chocolate opacity-60" />
+          {/* Language Selector */}
+          <div className="relative" ref={dropdownRef}>
+            <button 
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="flex items-center space-x-2 px-4 py-2 rounded-full bg-[#f8f4f1] shadow-[0_6px_12px_0_rgba(0,0,0,0.1)] cursor-pointer hover:opacity-80 transition-opacity border-none outline-none"
+            >
+              {lang === "IT" ? (
+                <div className="w-5 h-5 rounded-full bg-gradient-to-r from-green-600 via-white to-red-600 border border-black/5" />
+              ) : (
+                <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-900 via-white to-red-600 relative overflow-hidden border border-black/5">
+                  <div className="absolute inset-0 bg-blue-900" />
+                  <div className="absolute top-1/2 left-0 w-full h-[2px] bg-white -translate-y-1/2" />
+                  <div className="absolute top-0 left-1/2 w-[2px] h-full bg-white -translate-x-1/2" />
+                  {/* Simplified UK flag with CSS gradients/divs for a stylized look */}
+                </div>
+              )}
+              <ChevronDown className={`w-4 h-4 text-nonna-chocolate transition-transform ${isLangOpen ? "rotate-180" : ""}`} />
+            </button>
+
+            {isLangOpen && (
+              <div className="absolute top-full right-0 mt-3 w-40 bg-[#f8f4f1] rounded-2xl shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] overflow-hidden border border-black/5 animate-in fade-in slide-in-from-top-2 duration-200">
+                <button 
+                  onClick={() => { setLang("IT"); setIsLangOpen(false); }}
+                  className="w-full px-5 py-4 flex items-center space-x-3 hover:bg-black/5 transition-colors text-left"
+                >
+                  <div className="w-5 h-5 rounded-full bg-gradient-to-r from-green-600 via-white to-red-600 border border-black/5" />
+                  <span className="text-xs font-sans font-bold text-nonna-chocolate uppercase tracking-widest">Italiano</span>
+                </button>
+                <button 
+                  onClick={() => { setLang("EN"); setIsLangOpen(false); }}
+                  className="w-full px-5 py-4 flex items-center space-x-3 hover:bg-black/5 transition-colors text-left border-t border-black/5"
+                >
+                  <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-900 via-white to-red-600 border border-black/5" />
+                  <span className="text-xs font-sans font-bold text-nonna-chocolate uppercase tracking-widest">English</span>
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Shopping Bag Icon */}
