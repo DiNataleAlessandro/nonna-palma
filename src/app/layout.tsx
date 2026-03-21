@@ -27,10 +27,20 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Azienda Agricola Nonna Palma - Olio Extravergine di Puglia",
   description: "L'Olio Extravergine che sa di casa. Tradizione familiare pugliese a Carovigno.",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Nonna Palma",
+  },
   icons: {
-    icon: "/favicon.ico?v=2",
-    shortcut: "/favicon.ico?v=2",
-    apple: "/apple-touch-icon.png?v=2",
+    icon: [
+      { url: "/favicon.ico?v=5" },
+      { url: "/pwa-icon.png?v=5", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png?v=5", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico?v=5"],
   },
 };
 
