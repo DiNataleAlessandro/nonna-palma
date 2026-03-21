@@ -6,11 +6,11 @@ import { Product } from "@/types";
 import { Quote, Clock, Calendar } from "lucide-react";
 
 export default async function HomePage() {
-  // Fetch products from Supabase
+  // Fetch all products from Supabase
   const { data: allProducts } = await supabase
     .from("prodotti")
     .select("*")
-    .limit(8);
+    .order("created_at", { ascending: false });
 
   return (
     <div className="flex flex-col w-full bg-[#f8f4f1]">
@@ -26,7 +26,7 @@ export default async function HomePage() {
           </p>
           <div className="pt-4">
             <Link 
-              href="/shop" 
+              href="/chi-siamo" 
               className="inline-block px-10 py-4 bg-nonna-brown text-white font-sans font-semibold rounded-full hover:opacity-90 transition-opacity shadow-lg"
             >
               Scopri di più
@@ -80,7 +80,7 @@ export default async function HomePage() {
       </section>
 
       {/* I NOSTRI PRODOTTI - Gallery Section */}
-      <section className="py-24 px-4">
+      <section id="catalogo" className="py-24 px-4 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-serif text-nonna-chocolate uppercase tracking-widest">I NOSTRI PRODOTTI</h2>
@@ -91,15 +91,6 @@ export default async function HomePage() {
             {(allProducts as Product[])?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <Link 
-              href="/shop" 
-              className="inline-block px-10 py-4 border border-nonna-brown text-nonna-brown hover:bg-nonna-brown hover:text-white transition-colors uppercase tracking-widest text-xs font-bold rounded-sm"
-            >
-              Vedi tutto lo shop
-            </Link>
           </div>
         </div>
       </section>

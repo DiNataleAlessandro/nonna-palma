@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Product } from "@/types";
 import { Plus } from "lucide-react";
 
@@ -9,21 +10,25 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group relative">
-      <div className="aspect-square relative overflow-hidden bg-white/50 rounded-sm">
-        <Image
-          src={product.immagine_url || "https://images.unsplash.com/photo-1474979266404-7eaacabc8805?q=80&w=800&auto=format&fit=crop"} // Placeholder
-          alt={product.nome}
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
-      </div>
+      <Link href={`/prodotti/${product.slug}`} className="block">
+        <div className="aspect-square relative overflow-hidden bg-white/50 rounded-sm">
+          <Image
+            src={product.immagine_url || "https://images.unsplash.com/photo-1474979266404-7eaacabc8805?q=80&w=800&auto=format&fit=crop"} // Placeholder
+            alt={product.nome}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          {/* Overlay on hover */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+        </div>
+      </Link>
 
       <div className="pt-6 pb-2 space-y-2 text-center">
-        <h3 className="text-lg font-serif text-nonna-chocolate tracking-tight leading-tight transition-colors px-2">
-          {product.nome}
-        </h3>
+        <Link href={`/prodotti/${product.slug}`} className="block">
+          <h3 className="text-lg font-serif text-nonna-chocolate tracking-tight leading-tight transition-colors px-2 hover:text-nonna-brown">
+            {product.nome}
+          </h3>
+        </Link>
         
         <p className="text-sm font-sans font-semibold text-nonna-chocolate/80 tracking-wide">
           €{product.prezzo.toFixed(2)}
