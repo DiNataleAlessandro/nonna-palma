@@ -26,7 +26,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-7xl font-serif text-white tracking-tight leading-tight">
-            L'Olio Extravergine <br /> che sa di casa
+            L&apos;Olio Extravergine <br /> che sa di casa
           </h1>
           <p className="text-lg md:text-xl text-white/90 font-light tracking-widest uppercase">
             Direttamente dai nostri uliveti a Fasano

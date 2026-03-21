@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="space-y-4 text-center md:text-left">
           <h3 className="text-xl font-serif tracking-widest uppercase">Nonna Palma</h3>
           <p className="text-sm opacity-80 max-w-xs mx-auto md:mx-0">
-            L'olio extravergine che sa di Puglia, nato dalla passione della nostra famiglia a Fasano.
+            L&apos;olio extravergine che sa di Puglia, nato dalla passione della nostra famiglia a Fasano.
           </p>
           <div className="flex justify-center md:justify-start space-x-4 mt-6">
             <Instagram className="w-5 h-5 cursor-pointer hover:text-rustic-terracotta" />

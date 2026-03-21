@@ -3065,18 +3065,18 @@
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js": {
-      "bytes": 4597,
+    ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
+      "bytes": 6591,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
-      "bytes": 4682,
+    ".open-next/server-functions/default/.next/server/app/(storefront)/page_client-reference-manifest.js": {
+      "bytes": 6519,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.js": {
-      "bytes": 13053,
+      "bytes": 13718,
       "imports": [
         {
           "path": "fs",
@@ -3094,14 +3094,14 @@
           "original": "../shared/lib/deep-freeze"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "C:\\Users\\aless\\Documents\\nonna-palma\\.open-next\\server-functions\\default\\.next\\server\\app\\page_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "C:\\Users\\aless\\Documents\\nonna-palma\\.open-next\\server-functions\\default\\.next\\server\\app\\_not-found\\page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(storefront)/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "C:\\Users\\aless\\Documents\\nonna-palma\\.open-next\\server-functions\\default\\.next\\server\\app\\(storefront)\\page_client-reference-manifest.js"
         }
       ],
       "format": "cjs"
@@ -3122,6 +3122,11 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/chunks/237.js": {
+      "bytes": 154820,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/chunks/627.js": {
       "bytes": 66752,
       "imports": [
@@ -3133,11 +3138,6 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/chunks/864.js": {
-      "bytes": 154767,
-      "imports": [],
-      "format": "cjs"
-    },
     ".open-next/server-functions/default/.next/server/chunks/989.js": {
       "bytes": 99016,
       "imports": [],
@@ -3147,14 +3147,14 @@
       "bytes": 1718,
       "imports": [
         {
+          "path": ".open-next/server-functions/default/.next/server/chunks/237.js",
+          "kind": "require-call",
+          "original": "./chunks/237.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/chunks/627.js",
           "kind": "require-call",
           "original": "./chunks/627.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/chunks/864.js",
-          "kind": "require-call",
-          "original": "./chunks/864.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/989.js",
@@ -3519,7 +3519,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/_not-found/page.js": {
-      "bytes": 2659,
+      "bytes": 2787,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -3611,8 +3611,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/page.js": {
-      "bytes": 31879,
+    ".open-next/server-functions/default/.next/server/app/(storefront)/page.js": {
+      "bytes": 271224,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -3647,13 +3647,13 @@
         {
           "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
           "kind": "require-call",
-          "original": "../webpack-runtime.js"
+          "original": "../../webpack-runtime.js"
         }
       ],
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/next/dist/server/require.js": {
-      "bytes": 13252,
+      "bytes": 13540,
       "imports": [
         {
           "path": "path",
@@ -3726,9 +3726,9 @@
           "original": "C:\\Users\\aless\\Documents\\nonna-palma\\.open-next\\server-functions\\default\\.next\\server\\app\\favicon.ico\\route.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/page.js",
+          "path": ".open-next/server-functions/default/.next/server/app/(storefront)/page.js",
           "kind": "require-call",
-          "original": "C:\\Users\\aless\\Documents\\nonna-palma\\.open-next\\server-functions\\default\\.next\\server\\app\\page.js"
+          "original": "C:\\Users\\aless\\Documents\\nonna-palma\\.open-next\\server-functions\\default\\.next\\server\\app\\(storefront)\\page.js"
         }
       ],
       "format": "cjs"
@@ -4512,12 +4512,12 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/open-next.config.mjs": {
-      "bytes": 6995,
+      "bytes": 6832,
       "imports": [],
       "format": "esm"
     },
     ".open-next/server-functions/default/index.mjs": {
-      "bytes": 82155,
+      "bytes": 82280,
       "imports": [
         {
           "path": "node:module",
@@ -5504,14 +5504,14 @@
         ".open-next/server-functions/default/node_modules/next/dist/shared/lib/deep-freeze.js": {
           "bytesInOutput": 586
         },
-        ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js": {
-          "bytesInOutput": 4314
-        },
         ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
-          "bytesInOutput": 4411
+          "bytesInOutput": 6186
+        },
+        ".open-next/server-functions/default/.next/server/app/(storefront)/page_client-reference-manifest.js": {
+          "bytesInOutput": 6117
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.js": {
-          "bytesInOutput": 11399
+          "bytesInOutput": 11975
         },
         ".open-next/server-functions/default/node_modules/react/cjs/react-jsx-runtime.production.js": {
           "bytesInOutput": 740
@@ -5519,11 +5519,11 @@
         ".open-next/server-functions/default/node_modules/react/jsx-runtime.js": {
           "bytesInOutput": 194
         },
-        ".open-next/server-functions/default/.next/server/chunks/627.js": {
-          "bytesInOutput": 69437
+        ".open-next/server-functions/default/.next/server/chunks/237.js": {
+          "bytesInOutput": 161320
         },
-        ".open-next/server-functions/default/.next/server/chunks/864.js": {
-          "bytesInOutput": 161268
+        ".open-next/server-functions/default/.next/server/chunks/627.js": {
+          "bytesInOutput": 69438
         },
         ".open-next/server-functions/default/.next/server/chunks/989.js": {
           "bytesInOutput": 102672
@@ -5589,7 +5589,7 @@
           "bytesInOutput": 437375
         },
         ".open-next/server-functions/default/.next/server/app/_not-found/page.js": {
-          "bytesInOutput": 2746
+          "bytesInOutput": 2874
         },
         ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js": {
           "bytesInOutput": 81683
@@ -5597,11 +5597,11 @@
         ".open-next/server-functions/default/.next/server/app/favicon.ico/route.js": {
           "bytesInOutput": 60626
         },
-        ".open-next/server-functions/default/.next/server/app/page.js": {
-          "bytesInOutput": 33565
+        ".open-next/server-functions/default/.next/server/app/(storefront)/page.js": {
+          "bytesInOutput": 283651
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/require.js": {
-          "bytesInOutput": 10713
+          "bytesInOutput": 10987
         },
         ".open-next/server-functions/default/node_modules/next/dist/lib/interop-default.js": {
           "bytesInOutput": 363
@@ -5697,10 +5697,10 @@
           "bytesInOutput": 5074
         },
         ".open-next/server-functions/default/index.mjs": {
-          "bytesInOutput": 55453
+          "bytesInOutput": 55559
         }
       },
-      "bytes": 1991791
+      "bytes": 2246592
     }
   }
 }
