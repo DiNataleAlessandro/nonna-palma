@@ -21,7 +21,8 @@ export default function Footer() {
                 </div>
               </Link>
               <h3 className="text-xl md:text-2xl font-serif tracking-[0.1em] uppercase font-bold text-nonna-chocolate leading-tight">
-                Azienda Agricola<br />Nonna Palma
+                <span className="block whitespace-nowrap">Azienda Agricola</span>
+                <span className="block whitespace-nowrap">Nonna Palma</span>
               </h3>
             </div>
             <p className="text-[14px] leading-relaxed tracking-wide max-w-sm">
