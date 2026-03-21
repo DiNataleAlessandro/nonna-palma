@@ -34,13 +34,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico?v=7", sizes: "any" },
-      { url: "/nonna-palma-icon.png?v=7", type: "image/png", sizes: "512x512" },
-      { url: "/nonna-palma-icon.png?v=7", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.ico?v=8", sizes: "any" },
+      { url: "/logo.svg?v=8", type: "image/svg+xml" },
+      { url: "/nonna-palma-icon.png?v=8", type: "image/png", sizes: "512x512" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png?v=7", sizes: "180x180", type: "image/png" },
-      { url: "/nonna-palma-apple-icon.png?v=7", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png?v=8", sizes: "180x180", type: "image/png" },
+      { url: "/nonna-palma-apple-icon.png?v=8", sizes: "180x180", type: "image/png" },
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };
