@@ -99,7 +99,7 @@ export default function Footer() {
           <p className="text-[10px] uppercase tracking-[0.4em] text-nonna-chocolate/60">
             © {new Date().getFullYear()} AZIENDA AGRICOLA NONNA PALMA. ALL RIGHTS RESERVED.
           </p>
-          <p className="text-[10px] uppercase tracking-[0.2em] text-nonna-chocolate/60 font-bold">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-nonna-chocolate/60">
             P.IVA 02671810741
           </p>
         </div>
