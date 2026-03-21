@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
         {/* Logo (Left) */}
         <div className="flex-shrink-0 flex items-center">
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-0 group">
             <div className="relative w-24 h-24 transition-opacity group-hover:opacity-80">
               <Image
                 src="/logo.svg"
