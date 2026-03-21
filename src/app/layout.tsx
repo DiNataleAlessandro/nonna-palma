@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,14 +7,15 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Azienda Agricola Nonna Palma - Olio Extravergine di Puglia",
-  description: "L'Olio Extravergine che sa di casa. Tradizione familiare pugliese a Fasano.",
+  description: "L'Olio Extravergine che sa di casa. Tradizione familiare pugliese a Carovigno.",
 };
 
 export default function RootLayout({
@@ -25,9 +26,9 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}
+      className={`${inter.variable} ${cormorantGaramond.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#FDFBF7] text-[#3A4D39] font-sans">
+      <body className="min-h-full flex flex-col bg-[#F8F4F1] text-[#411E06] font-sans">
         {children}
       </body>
     </html>

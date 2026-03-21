@@ -15,32 +15,32 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="text-2xl md:text-3xl font-serif tracking-widest text-rustic-olive font-bold"
+              className="text-2xl md:text-3xl font-serif tracking-widest text-nonna-chocolate font-bold"
             >
               NONNA PALMA
             </Link>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex flex-grow justify-center space-x-12 uppercase text-sm tracking-widest font-medium">
-            <Link href="/" className="hover:text-rustic-terracotta transition-colors">Home</Link>
-            <Link href="/shop" className="hover:text-rustic-terracotta transition-colors">Shop</Link>
-            <Link href="/storia" className="hover:text-rustic-terracotta transition-colors">La Storia</Link>
-            <Link href="/contatti" className="hover:text-rustic-terracotta transition-colors">Contatti</Link>
+          <div className="hidden md:flex flex-grow justify-center space-x-12 uppercase text-[13px] tracking-[0.2em] font-medium text-nonna-chocolate/80">
+            <Link href="/" className="hover:text-nonna-terra transition-colors">Home</Link>
+            <Link href="/shop" className="hover:text-nonna-terra transition-colors">Shop</Link>
+            <Link href="/nostro-olio" className="hover:text-nonna-terra transition-colors">Il Nostro Olio</Link>
+            <Link href="/contatti" className="hover:text-nonna-terra transition-colors">Contatti</Link>
           </div>
 
           {/* Cart & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
-            <Link href="/cart" className="relative p-2 hover:bg-rustic-olive/5 rounded-full transition-colors">
-              <ShoppingCart className="w-6 h-6" />
-              <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-rustic-terracotta rounded-full">
+            <Link href="/cart" className="relative p-2 hover:bg-nonna-chocolate/5 rounded-full transition-colors text-nonna-chocolate">
+              <ShoppingCart className="w-5 h-5" />
+              <span className="absolute top-1 right-1 inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-nonna-terra rounded-full">
                 0
               </span>
             </Link>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 hover:bg-rustic-olive/5 rounded-full transition-colors"
+              className="md:hidden p-2 hover:bg-nonna-chocolate/5 rounded-full transition-colors text-nonna-chocolate"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -50,11 +50,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 inset-x-0 bg-rustic-cream border-b border-rustic-olive/10 shadow-lg p-6 flex flex-col space-y-4 uppercase text-center tracking-widest font-medium">
-          <Link href="/" onClick={() => setIsOpen(false)} className="py-2 hover:text-rustic-terracotta">Home</Link>
-          <Link href="/shop" onClick={() => setIsOpen(false)} className="py-2 hover:text-rustic-terracotta">Shop</Link>
-          <Link href="/storia" onClick={() => setIsOpen(false)} className="py-2 hover:text-rustic-terracotta">La Storia</Link>
-          <Link href="/contatti" onClick={() => setIsOpen(false)} className="py-2 hover:text-rustic-terracotta">Contatti</Link>
+        <div className="md:hidden absolute top-20 inset-x-0 bg-nonna-cream border-b border-nonna-chocolate/10 shadow-lg p-6 flex flex-col space-y-4 uppercase text-center tracking-[0.2em] text-sm font-medium text-nonna-chocolate">
+          <Link href="/" onClick={() => setIsOpen(false)} className="py-2 hover:text-nonna-terra">Home</Link>
+          <Link href="/shop" onClick={() => setIsOpen(false)} className="py-2 hover:text-nonna-terra">Shop</Link>
+          <Link href="/nostro-olio" onClick={() => setIsOpen(false)} className="py-2 hover:text-nonna-terra">Il Nostro Olio</Link>
+          <Link href="/contatti" onClick={() => setIsOpen(false)} className="py-2 hover:text-nonna-terra">Contatti</Link>
         </div>
       )}
     </nav>

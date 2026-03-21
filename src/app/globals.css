@@ -2,16 +2,18 @@
 
 @theme {
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-cormorant);
 
-  --color-rustic-cream: #FDFBF7;
-  --color-rustic-olive: #3A4D39;
-  --color-rustic-terracotta: #C27664;
+  --color-nonna-cream: #F8F4F1;
+  --color-nonna-chocolate: #411E06;
+  --color-nonna-terra: #A05222;
+  --color-nonna-sage: #B1D3BB;
+  --color-nonna-muted-brown: #6F5441;
 }
 
 @layer base {
   body {
-    @apply bg-rustic-cream text-rustic-olive font-sans;
+    @apply bg-nonna-cream text-nonna-chocolate font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -19,7 +21,7 @@
   }
 }
 
-/* Glassmorphism for Navbar */
+/* Glassmorphism for Navbar - aligned with Wix style (minimalist) */
 .glass-nav {
-  @apply sticky top-0 z-50 bg-rustic-cream/80 backdrop-blur-md border-b border-rustic-olive/10;
+  @apply sticky top-0 z-50 bg-nonna-cream/95 backdrop-blur-sm border-b border-nonna-chocolate/5;
 }
