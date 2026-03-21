@@ -9,7 +9,7 @@ export default function StorefrontLayout({
   return (
     <>
       <Navbar />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow pt-24">{children}</main>
       <Footer />
     </>
   );
