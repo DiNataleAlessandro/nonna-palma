@@ -9,36 +9,40 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
           {/* Brand & Mission */}
           <div className="space-y-6 text-center md:text-left">
-            <Link href="/" className="inline-block group">
-              <div className="relative w-20 h-20 mx-auto md:mx-0 transition-opacity group-hover:opacity-80">
-                <Image
-                  src="/logo.svg"
-                  alt="Nonna Palma Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-            <h3 className="text-xl md:text-2xl font-serif tracking-[0.1em] uppercase font-bold text-nonna-chocolate">AZIENDA AGRICOLA NONNA PALMA</h3>
-            <p className="text-[13px] leading-relaxed tracking-wide max-w-sm">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
+              <Link href="/" className="inline-block group shrink-0">
+                <div className="relative w-20 h-20 transition-opacity group-hover:opacity-80">
+                  <Image
+                    src="/logo.svg"
+                    alt="Nonna Palma Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </Link>
+              <h3 className="text-xl md:text-2xl font-serif tracking-[0.1em] uppercase font-bold text-nonna-chocolate leading-tight">
+                Azienda Agricola<br />Nonna Palma
+              </h3>
+            </div>
+            <p className="text-[14px] leading-relaxed tracking-wide max-w-sm">
               Coltiviamo eccellenza nel cuore della Puglia. Dal 1950, la nostra famiglia si dedica alla produzione di Olio Extravergine di Oliva di altissima qualità.
             </p>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-6 text-center md:text-left">
-            <h4 className="text-[11px] uppercase tracking-[0.3em] font-bold">Contatti</h4>
-            <div className="text-[14px] space-y-4 font-serif italic">
+            <h4 className="text-[12px] uppercase tracking-[0.3em] font-bold">Contatti</h4>
+            <div className="text-[16px] space-y-4 font-serif italic">
               <p className="flex items-center justify-center md:justify-start">
-                <MapPin className="w-4 h-4 mr-3 text-nonna-brown" />
+                <MapPin className="w-5 h-5 mr-3 text-nonna-brown shrink-0" />
                 <span>Corso Vittorio Emanuele, 106, 72012 Carovigno BR</span>
               </p>
               <p className="flex items-center justify-center md:justify-start">
-                <Phone className="w-4 h-4 mr-3 text-nonna-brown" />
+                <Phone className="w-5 h-5 mr-3 text-nonna-brown shrink-0" />
                 <span>(+39) 338 5649508</span>
               </p>
               <p className="flex items-center justify-center md:justify-start">
-                <Mail className="w-4 h-4 mr-3 text-nonna-brown" />
+                <Mail className="w-5 h-5 mr-3 text-nonna-brown shrink-0" />
                 <span className="break-all">aziendaagricola.nonnapalma@gmail.com</span>
               </p>
             </div>
