@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* Language Selector (Placeholder) */}
           <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-[#f8f4f1] shadow-[0_6px_12px_0_rgba(0,0,0,0.1)] cursor-pointer hover:opacity-80 transition-opacity">
             <div className="w-5 h-5 rounded-full bg-gradient-to-r from-green-600 via-white to-red-600 border border-black/5" />
-            <span className="text-xs font-sans uppercase tracking-widest text-nonna-chocolate font-medium">IT</span>
+            <ChevronDown className="w-4 h-4 text-nonna-chocolate opacity-60" />
           </div>
 
           {/* Shopping Bag Icon */}
