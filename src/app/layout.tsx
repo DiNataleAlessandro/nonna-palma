@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   title: "Azienda Agricola Nonna Palma - Olio Extravergine di Puglia",
   description: "L'Olio Extravergine che sa di casa. Tradizione familiare pugliese a Carovigno.",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.ico?v=2",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/apple-touch-icon.png?v=2",
   },
 };
 
