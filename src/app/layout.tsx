@@ -34,12 +34,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/nonna-palma-icon.png?v=6", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=7", sizes: "any" },
+      { url: "/nonna-palma-icon.png?v=7", type: "image/png", sizes: "512x512" },
+      { url: "/nonna-palma-icon.png?v=7", type: "image/png", sizes: "32x32" },
     ],
     apple: [
-      { url: "/nonna-palma-apple-icon.png?v=6", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png?v=7", sizes: "180x180", type: "image/png" },
+      { url: "/nonna-palma-apple-icon.png?v=7", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: ["/nonna-palma-icon.png?v=6"],
   },
 };
 

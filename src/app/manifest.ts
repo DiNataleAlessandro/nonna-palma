@@ -12,12 +12,17 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#A05222',
     icons: [
       {
-        src: '/nonna-palma-icon.png?v=6',
+        src: '/favicon.ico?v=7',
+        sizes: 'any',
+        type: 'image/x-icon',
+      },
+      {
+        src: '/nonna-palma-icon.png?v=7',
         sizes: '512x512',
         type: 'image/png',
       },
       {
-        src: '/nonna-palma-apple-icon.png?v=6',
+        src: '/nonna-palma-apple-icon.png?v=7',
         sizes: '180x180',
         type: 'image/png',
       }
