@@ -7,6 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Eccellenza nel cuore della Puglia. Dal 1950, olio extravergine di oliva di altissima qualità.',
     start_url: '/',
     display: 'standalone',
+    orientation: 'portrait',
     background_color: '#FAF9F6',
     theme_color: '#A05222',
     icons: [

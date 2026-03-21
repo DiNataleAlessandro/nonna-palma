@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
@@ -16,9 +16,21 @@ const cormorantGaramond = Cormorant_Garamond({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#A05222",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export const metadata: Metadata = {
   title: "Azienda Agricola Nonna Palma - Olio Extravergine di Puglia",
   description: "L'Olio Extravergine che sa di casa. Tradizione familiare pugliese a Carovigno.",
+  icons: {
+    icon: "/icon.svg", // Trasparente per browser
+    apple: "/apple-touch-icon.png", // Con sfondo per iOS
+  },
 };
 
 export default function RootLayout({
