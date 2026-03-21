@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="space-y-4 text-center md:text-left">
           <h3 className="text-xl font-serif tracking-widest uppercase">Nonna Palma</h3>
           <p className="text-sm opacity-80 max-w-xs mx-auto md:mx-0">
-            L&apos;olio extravergine che sa di Puglia, nato dalla passione della nostra famiglia a Fasano.
+            L&apos;olio extravergine che sa di Puglia, nato dalla passione della nostra famiglia a Carovigno.
           </p>
           <div className="flex justify-center md:justify-start space-x-4 mt-6">
             <Instagram className="w-5 h-5 cursor-pointer hover:text-rustic-terracotta" />
@@ -33,7 +33,7 @@ export default function Footer() {
           <h4 className="font-medium uppercase tracking-widest">Contatti</h4>
           <div className="text-sm opacity-80 space-y-2">
             <p className="flex items-center justify-center md:justify-end">
-              <MapPin className="w-4 h-4 mr-2" /> Fasano (BR), Puglia
+              <MapPin className="w-4 h-4 mr-2" /> Carovigno (BR), Puglia
             </p>
             <p>P.IVA 02123450742</p>
             <p>info@nonnapalma.com</p>
