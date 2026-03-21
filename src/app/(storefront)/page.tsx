@@ -3,126 +3,137 @@ import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import ProductCard from "@/components/products/ProductCard";
 import { Product } from "@/types";
-import { Quote } from "lucide-react";
+import { Quote, Clock, Calendar } from "lucide-react";
 
 export default async function HomePage() {
   // Fetch products from Supabase
-  const { data: bestSellers } = await supabase
+  const { data: allProducts } = await supabase
     .from("prodotti")
     .select("*")
-    .limit(4);
-
-  const { data: frise } = await supabase
-    .from("prodotti")
-    .select("*")
-    .ilike("nome", "%frise%")
-    .limit(4);
+    .limit(8);
 
   return (
     <div className="flex flex-col w-full">
-      {/* Hero Section */}
-      <section className="relative h-[95vh] w-full flex items-center justify-center overflow-hidden bg-[#F8F4F1]">
+      {/* Hero Section - Exact Wix Match */}
+      <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1474979266404-7eaacabc8805?q=80&w=2000&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1464364418214-23a6c281313e?q=80&w=2000&auto=format&fit=crop"
             alt="Uliveti Nonna Palma"
             fill
             priority
-            className="object-cover opacity-60 mix-blend-multiply"
+            className="object-cover"
           />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
         
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
-          <h1 className="text-5xl md:text-[120px] font-serif text-nonna-chocolate tracking-tight leading-[1.1] md:leading-[1] mb-8 animate-fade-in">
-            Azienda Agricola <br /> <span className="italic">Nonna Palma</span>
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center text-white">
+          <h1 className="text-5xl md:text-8xl font-serif tracking-widest leading-tight mb-4 drop-shadow-lg uppercase">
+            ESPLORA <br /> L&apos;ECCELLENZA
           </h1>
-          <p className="text-lg md:text-2xl text-nonna-chocolate/80 font-serif tracking-[0.1em] mb-12 max-w-2xl italic">
-            &quot;L&apos;Olio Extravergine che sa di casa&quot;
-          </p>
-          <div className="flex space-x-6">
+          <h2 className="text-xl md:text-3xl font-serif italic mb-10 drop-shadow-md">
+            Benvenuti nel Mondo dell&apos;Azienda Agricola Nonna Palma
+          </h2>
+          <Link 
+            href="/shop" 
+            className="px-12 py-4 bg-white text-nonna-chocolate hover:bg-nonna-terra hover:text-white transition-all duration-300 rounded-sm uppercase tracking-[0.2em] text-[14px] font-bold shadow-lg"
+          >
+            Scopri di più
+          </Link>
+        </div>
+      </section>
+
+      {/* I NOSTRI PRODOTTI - Gallery Section */}
+      <section className="py-24 px-4 bg-[#F8F4F1]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-serif text-nonna-chocolate uppercase tracking-widest">I NOSTRI PRODOTTI</h2>
+            <div className="w-20 h-[2px] bg-nonna-chocolate mt-4" />
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            {(allProducts as Product[])?.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
             <Link 
               href="/shop" 
-              className="px-10 py-4 bg-nonna-terra text-white hover:bg-nonna-chocolate transition-all duration-300 rounded-sm uppercase tracking-[0.2em] text-[13px] font-medium shadow-sm"
+              className="inline-block px-10 py-4 border-2 border-nonna-chocolate text-nonna-chocolate hover:bg-nonna-chocolate hover:text-white transition-all duration-300 uppercase tracking-widest text-xs font-bold"
             >
-              Acquista Ora
+              Vedi tutto lo shop
             </Link>
           </div>
         </div>
       </section>
 
-      {/* I più venduti */}
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-16 space-y-4">
-            <span className="text-nonna-terra uppercase tracking-[0.3em] text-[11px] font-bold">Produzione propria</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-nonna-chocolate">I più venduti</h2>
-            <div className="w-16 h-[1px] bg-nonna-terra/40 mt-6" />
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-            {(bestSellers as Product[])?.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-            {(!bestSellers || bestSellers.length === 0) && (
-              <p className="col-span-full text-center text-nonna-chocolate/50 italic py-20">
-                In caricamento...
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Citazione / Testimonianza 1 */}
-      <section className="py-24 bg-nonna-cream border-y border-nonna-chocolate/5 overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <Quote className="w-12 h-12 text-nonna-terra/30 mx-auto mb-8" />
-          <p className="text-2xl md:text-3xl font-serif text-nonna-chocolate italic leading-relaxed mb-8">
-            &quot;Consiglio vivamente l&apos;Azienda Agricola Nonna Palma a tutti gli amanti del buon cibo.&quot;
-          </p>
-          <div className="w-12 h-[1px] bg-nonna-terra mx-auto" />
-        </div>
-      </section>
-
-      {/* Frise Tradizionali */}
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-16 space-y-4">
-            <span className="text-nonna-terra uppercase tracking-[0.3em] text-[11px] font-bold">Tradizione Pugliese</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-nonna-chocolate">Frise Tradizionali</h2>
-            <div className="w-16 h-[1px] bg-nonna-terra/40 mt-6" />
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-            {(frise as Product[])?.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-            {(!frise || frise.length === 0) && (
-              <div className="col-span-full text-center py-20 space-y-4">
-                <p className="text-nonna-chocolate/50 italic">
-                  Il forno è acceso, le frise arrivano a breve...
-                </p>
-                <Link href="/shop" className="text-nonna-terra text-sm underline tracking-widest uppercase">Vedi tutto lo shop</Link>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonianza Antonio Esposito */}
-      <section className="py-32 bg-white flex flex-col items-center">
-         <div className="max-w-3xl mx-auto px-4 text-center space-y-8">
-            <div className="flex justify-center space-x-1 mb-4">
-               {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-nonna-terra text-xl">★</span>
-               ))}
+      {/* EVENTI SPECIALI - Exactly as Wix */}
+      <section className="py-20 bg-nonna-chocolate text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center space-y-8">
+          <h2 className="text-3xl md:text-5xl font-serif uppercase tracking-widest">EVENTI SPECIALI</h2>
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12">
+            <div className="flex items-center space-x-3">
+              <Clock className="w-6 h-6 text-nonna-terra" />
+              <span className="text-xl font-serif italic">Ogni giorno dalle 19:00 alle 22:00</span>
             </div>
-            <h3 className="text-xl md:text-2xl font-serif text-nonna-chocolate font-bold italic tracking-wide">
-               Antonio Esposito
-            </h3>
-            <p className="text-lg md:text-xl text-nonna-chocolate/70 font-serif leading-relaxed italic">
-               &quot;Partecipo spesso agli eventi di degustazione organizzati dall&apos;Azienda Agricola Nonna Palma e ogni volta rimango sorpreso dalla varietà e bontà dei prodotti offerti. Un&apos;esperienza da non perdere!&quot;
-            </p>
-         </div>
+            <div className="flex items-center space-x-3">
+              <Calendar className="w-6 h-6 text-nonna-terra" />
+              <span className="text-xl font-serif italic">Degustazioni guidate</span>
+            </div>
+          </div>
+          <p className="text-white/70 max-w-2xl mx-auto italic">
+            Vieni a trovarci per un&apos;esperienza sensoriale indimenticabile tra i sapori della nostra terra.
+          </p>
+        </div>
+      </section>
+
+      {/* COSA DICONO I NOSTRI CLIENTI - Testimonials Section */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center text-center mb-20 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-serif text-nonna-chocolate uppercase tracking-widest">COSA DICONO I NOSTRI CLIENTI</h2>
+            <p className="text-nonna-chocolate/60 tracking-widest uppercase text-xs">Testimonianze</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            {/* Testimonial 1 */}
+            <div className="flex flex-col items-center text-center space-y-6">
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-nonna-terra/20">
+                <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop" alt="Maria Rossi" fill className="object-cover" />
+              </div>
+              <h3 className="text-xl font-serif font-bold text-nonna-chocolate">Maria Rossi</h3>
+              <Quote className="w-8 h-8 text-nonna-terra/40" />
+              <p className="text-nonna-chocolate/80 italic leading-relaxed">
+                &quot;L&apos; Azienda Agricola Nonna Palma è un punto di riferimento per la qualità. I prodotti sono genuini e il sapore è autentico.&quot;
+              </p>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="flex flex-col items-center text-center space-y-6">
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-nonna-terra/20">
+                <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Antonio Esposito" fill className="object-cover" />
+              </div>
+              <h3 className="text-xl font-serif font-bold text-nonna-chocolate">Antonio Esposito</h3>
+              <Quote className="w-8 h-8 text-nonna-terra/40" />
+              <p className="text-nonna-chocolate/80 italic leading-relaxed">
+                &quot;Ho acquistato l&apos;olio extravergine di oliva e devo dire che è il migliore che abbia mai provato. Complimenti!&quot;
+              </p>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="flex flex-col items-center text-center space-y-6">
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-nonna-terra/20">
+                <Image src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop" alt="Giovanna Bianchi" fill className="object-cover" />
+              </div>
+              <h3 className="text-xl font-serif font-bold text-nonna-chocolate">Giovanna Bianchi</h3>
+              <Quote className="w-8 h-8 text-nonna-terra/40" />
+              <p className="text-nonna-chocolate/80 italic leading-relaxed">
+                &quot;Partecipo spesso agli eventi di degustazione e ogni volta rimango sorpresa dalla varietà e bontà dei prodotti offerti.&quot;
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
