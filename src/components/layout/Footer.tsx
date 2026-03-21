@@ -19,7 +19,7 @@ export default function Footer() {
                 />
               </div>
             </Link>
-            <h3 className="text-2xl font-serif tracking-[0.2em] uppercase font-bold text-nonna-chocolate">NONNA PALMA</h3>
+            <h3 className="text-xl md:text-2xl font-serif tracking-[0.1em] uppercase font-bold text-nonna-chocolate">AZIENDA AGRICOLA NONNA PALMA</h3>
             <p className="text-[13px] leading-relaxed tracking-wide max-w-sm">
               Coltiviamo eccellenza nel cuore della Puglia. Dal 1950, la nostra famiglia si dedica alla produzione di Olio Extravergine di Oliva di altissima qualità.
             </p>
